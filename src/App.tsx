@@ -74,14 +74,15 @@ function App() {
             
             <div className="flex justify-center">
               <button
-                onClick={() => window.open('/public', '_blank')}
+                onClick={() => window.location.href = '/public'}
                 className="bg-olive-100 hover:bg-olive-200 text-olive-700 px-4 py-2 rounded-full 
-                         text-sm font-medium transition-all duration-300 flex items-center gap-2"
+                        text-sm font-medium transition-all duration-300 flex items-center gap-2"
               >
                 <Images className="w-4 h-4" />
                 Ver todas as fotos enviadas
               </button>
             </div>
+
             
           </div>
         </section>

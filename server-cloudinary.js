@@ -559,13 +559,24 @@ app.get(['/public', '/public/:user'], async (req, res) => {
       <div class="header-content">
         <a href="/" class="back-btn">← Voltar</a>
         <div class="brand">
-          <svg class="heart-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#FFFFFF" />
-          </svg>
+          <svg class="heart-icon" width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path 
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                fill="none" 
+                stroke="#556B2F" 
+                stroke-width="2"
+            />
+            </svg>
+
           <h1>Laryssa & Rafael</h1>
-          <svg class="heart-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#FFFFFF" />
-          </svg>
+          <svg class="heart-icon" width="28" height="28" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path 
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                fill="none" 
+                stroke="#556B2F" 
+                stroke-width="2"
+            />
+            </svg>
         </div>
         <div class="subtitle">Compartilhe os momentos mágicos do nosso dia especial</div>
       </div>
@@ -601,67 +612,61 @@ app.get(['/public', '/public/:user'], async (req, res) => {
 
     <!-- Modal -->
     <div id="imageModal" class="modal-overlay" onclick="closeModal(event)">
-      <div class="modal-content" onclick="event.stopPropagation()">
+    <div class="modal-content" onclick="event.stopPropagation()">
         <div class="modal-header">
-          <div class="modal-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="2"/>
-              <polyline points="21,15 16,10 5,21" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            <span id="modalTitle">Imagem</span>
-          </div>
-          <button class="modal-close" onclick="closeModal()">&times;</button>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="2"/>
+            <polyline points="21,15 16,10 5,21" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
         </div>
         <img id="modalImage" class="modal-image" src="" alt="" />
         <div class="modal-footer">
-          <div class="modal-user">
+        <div class="modal-user">
             Enviado por: <span id="modalUser">Usuário</span>
-          </div>
         </div>
-      </div>
+        </div>
+    </div>
     </div>
 
     <footer>
-      <div style="background:rgba(255,255,255,.6); backdrop-filter:blur(6px); border-radius:16px; padding:24px; border:1px solid var(--olive100);">
+    <div style="background:rgba(255,255,255,.6); backdrop-filter:blur(6px); border-radius:16px; padding:24px; border:1px solid var(--olive100);">
         <svg class="heart-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto 8px; display:block;">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#6b7c3f" />
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#6b7c3f" />
         </svg>
         <p>Obrigado por fazer parte do nosso dia especial!</p>
-      </div>
-      <p>Com amor, Laryssa & Rafael</p>
+    </div>
+    <p>Com amor, Laryssa & Rafael</p>
     </footer>
 
     <script>
-      function openModal(imageUrl, user, imageName) {
+    function openModal(imageUrl, user) {
         const modal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
         const modalUser = document.getElementById('modalUser');
         
         modalImage.src = imageUrl;
-        modalImage.alt = imageName;
-        modalTitle.textContent = imageName || 'Imagem';
         modalUser.textContent = user || 'Usuário';
         
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-      }
-      
-      function closeModal(event) {
+    }
+    
+    function closeModal(event) {
         if (event && event.target !== event.currentTarget) return;
         
         const modal = document.getElementById('imageModal');
         modal.classList.remove('active');
         document.body.style.overflow = '';
-      }
-      
-      // Fechar modal com ESC
-      document.addEventListener('keydown', function(event) {
+    }
+    
+    // Fechar modal com ESC
+    document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
-          closeModal();
+        closeModal();
         }
-      });
+    });
     </script>
   </body>
 </html>

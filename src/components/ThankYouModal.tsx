@@ -10,7 +10,7 @@ const ThankYouModal: React.FC<ThankYouModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleViewPhotos = () => {
-    window.open('/public', '_blank');
+    window.location.href = '/public';
     onClose();
   };
 
