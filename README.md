@@ -51,6 +51,34 @@ Site para compartilhamento de fotos do casamento com integração ao Google Driv
 
 ## Como executar
 
+### Deploy no Netlify
+
+1. **Preparar o projeto:**
+   ```bash
+   npm run build
+   ```
+
+2. **Conectar ao Netlify:**
+   - Acesse [netlify.com](https://netlify.com)
+   - Conecte seu repositório GitHub
+   - Configure as seguintes opções:
+     - **Build command:** `npm run build`
+     - **Publish directory:** `dist`
+     - **Functions directory:** `netlify/functions`
+
+3. **Configurar variáveis de ambiente no Netlify:**
+   - Vá em Site Settings > Environment Variables
+   - Adicione as seguintes variáveis:
+     ```
+     CLOUDINARY_CLOUD_NAME=dm6zohuj2
+     CLOUDINARY_API_KEY=145833586856947
+     CLOUDINARY_API_SECRET=Jkt8rk3Zv8ALRqI9Glu1s6sYHgg
+     ```
+
+4. **Deploy automático:**
+   - O Netlify fará deploy automático a cada push no repositório
+   - As funções serverless estarão disponíveis em `/.netlify/functions/`
+
 ### Desenvolvimento
 ```bash
 npm install

@@ -1,0 +1,6 @@
+# Netlify redirects file
+/api/test /.netlify/functions/test 200
+/api/upload /.netlify/functions/upload 200
+/public /.netlify/functions/gallery 200
+/public/* /.netlify/functions/gallery 200
+/* /index.html 200
