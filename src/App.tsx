@@ -74,7 +74,7 @@ function App() {
             
             <div className="flex justify-center">
               <button
-                onClick={() => window.open('https://drive.google.com/drive/folders/1Zs2LgeYcU3t4ztDglABV5EoL-vscMPxL?usp=sharing', '_blank')}
+                onClick={() => window.open('/public', '_blank')}
                 className="bg-olive-100 hover:bg-olive-200 text-olive-700 px-4 py-2 rounded-full 
                          text-sm font-medium transition-all duration-300 flex items-center gap-2"
               >

@@ -10,7 +10,7 @@ const ThankYouModal: React.FC<ThankYouModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleViewPhotos = () => {
-    window.open('https://drive.google.com/drive/folders/1IAvKY8c4Scwt1TOpDhfKOErEw4nKpfsw?usp=sharing', '_blank');
+    window.open('/public', '_blank');
     onClose();
   };
 
