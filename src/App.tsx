@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Camera, Heart, Upload, Lightbulb, X, ImageIcon, Images, GalleryVerticalEnd} from 'lucide-react';
+import { Camera, Heart, Upload, Lightbulb, X, ImageIcon, Images, GalleryVerticalEnd, Gift} from 'lucide-react';
 import PhotoUpload from './components/PhotoUpload';
 import SuggestionsModal from './components/SuggestionsModal';
 import ThankYouModal from './components/ThankYouModal';
@@ -80,6 +80,17 @@ function App() {
               >
                 <Images className="w-4 h-4" />
                 Ver todas as fotos enviadas
+              </button>
+            </div>
+            
+            <div className="flex justify-center mt-4">
+              <button
+                onClick={() => window.open('https://www.rafaelelaryssa.com.br/', '_blank')}
+                className="bg-olive-100 hover:bg-olive-200 text-olive-700 px-4 py-2 rounded-full 
+                        text-sm font-medium transition-all duration-300 flex items-center gap-2"
+              >
+                <Gift  className="w-4 h-4" />
+                Confira nosso site! Lembre de deixar um presente 😉
               </button>
             </div>
 
