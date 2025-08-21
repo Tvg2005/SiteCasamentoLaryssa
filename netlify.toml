@@ -38,3 +38,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[functions.upload]
+  # Usa o empacotador antigo (zisi) que é compatível com nossa função de parse manual
+  node_bundler = "zisi"
