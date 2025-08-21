@@ -3,7 +3,51 @@ import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 
 // A função parseMultipartData permanece exatamente a mesma
 function parseMultipartData(body, boundary) {
-  // ... (nenhuma alteração aqui)
+  const parts = [];
+  const boundaryBuffer = Buffer.from(`--${boundary}`);
+  const bodyBuffer = Buffer.from(body, 'base64');
+  
+  let start = 0;
+  let end = bodyBuffer.indexOf(boundaryBuffer, start);
+  
+  while (end !== -1) {
+    if (start !== 0) {
+      const part = bodyBuffer.slice(start, end);
+      const headerEnd = part.indexOf('\r\n\r\n');
+      
+      if (headerEnd !== -1) {
+        const headers = part.slice(0, headerEnd).toString();
+        const content = part.slice(headerEnd + 4);
+        
+        const nameMatch = headers.match(/name="([^"]+)"/);
+        const filenameMatch = headers.match(/filename="([^"]+)"/);
+        const contentTypeMatch = headers.match(/Content-Type: ([^\r\n]+)/);
+        
+        if (nameMatch) {
+          const field = {
+            name: nameMatch[1],
+            content: content.slice(0, -2), // Remove trailing \r\n
+            headers: {}
+          };
+          
+          if (filenameMatch) {
+            field.originalFilename = filenameMatch[1];
+            field.headers['content-type'] = contentTypeMatch ? contentTypeMatch[1] : 'application/octet-stream';
+            field.buffer = field.content;
+          } else {
+            field.value = field.content.toString();
+          }
+          
+          parts.push(field);
+        }
+      }
+    }
+    
+    start = end + boundaryBuffer.length;
+    end = bodyBuffer.indexOf(boundaryBuffer, start);
+  }
+  
+  return parts; // Essencial: retorna o array com os dados
 }
 
 // NOVO: Configuração para o AWS S3
