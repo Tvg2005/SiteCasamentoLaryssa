@@ -2,12 +2,12 @@ import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
 
 // Configuração para o AWS S3 a partir das variáveis de ambiente
 const s3Config = {
-  region: process.env.AWS_REGION || 'sa-east-1',
+  region: process.env.AWS_REGION_PRJ || 'sa-east-1',
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID_PRJ,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY_PRJ,
   },
-  bucketName: process.env.S3_BUCKET_NAME
+  bucketName: process.env.S3_BUCKET_NAME_PRJ
 };
 
 // Inicialização do cliente S3
