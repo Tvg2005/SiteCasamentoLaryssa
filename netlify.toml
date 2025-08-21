@@ -1,10 +1,24 @@
+# Configurações para o build de produção (quando você sobe para a Netlify)
 [build]
   publish = "dist"
   command = "npm run build"
 
+# Instruções específicas para o comando `netlify dev`
+[dev]
+  # Comando para iniciar o servidor de desenvolvimento (Vite, Create React App, etc.)
+  command = "npm run dev"
+  
+  # Porta onde o seu framework (Vite) roda
+  targetPort = 5173
+  
+  # Porta unificada que você acessará no navegador
+  port = 8888
+
+# Onde suas funções serverless estão localizadas
 [functions]
   directory = "netlify/functions"
 
+# Seus redirecionamentos (permanecem os mesmos)
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
