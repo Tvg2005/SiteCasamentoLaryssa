@@ -1,5 +1,4 @@
-// NOVO: Importar o cliente S3 do SDK da AWS
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 // A função parseMultipartData permanece exatamente a mesma
 function parseMultipartData(body, boundary) {
@@ -107,7 +106,7 @@ async function uploadToS3(file, userName) {
 }
 
 // O handler principal da função Netlify
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   // CORS headers (sem alteração)
   const headers = {
     'Access-Control-Allow-Origin': '*',

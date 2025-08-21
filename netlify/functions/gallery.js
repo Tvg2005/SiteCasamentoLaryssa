@@ -1,4 +1,4 @@
-import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
+const { S3Client, ListObjectsV2Command } = require('@aws-sdk/client-s3');
 
 // Configuração para o AWS S3 a partir das variáveis de ambiente
 const s3Config = {
@@ -62,7 +62,7 @@ async function listUserFolders() {
   return folders.sort();
 }
 
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
