@@ -8,7 +8,7 @@ function parseMultipartData(body, boundary) {
 
 // NOVO: Configuração para o AWS S3
 const s3Config = {
-  region: process.env.AWS_REGION_PRJ || 'sa-east-1',
+  region: process.env.AWS_REGION_PRJ,
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID_PRJ,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY_PRJ,
