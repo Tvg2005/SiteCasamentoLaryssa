@@ -76,8 +76,7 @@ async function uploadToS3(file, userName) {
       Bucket: s3Config.bucketName,
       Key: key,
       Body: file.buffer, // O conteúdo do arquivo
-      ContentType: file.headers['content-type'], // Importante para o navegador saber o tipo do arquivo
-      ACL: 'public-read' // Torna o arquivo publicamente legível
+      ContentType: file.headers['content-type'] // Importante para o navegador saber o tipo do arquivo
     });
 
     console.log(`Iniciando upload para o S3: ${key}`);
